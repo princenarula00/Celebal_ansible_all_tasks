@@ -1,0 +1,7 @@
+---
+- name: create playbook using jinja2 template
+  hosts: all
+  tasks:
+    - template:
+        src: index.j2
+        dest: /data

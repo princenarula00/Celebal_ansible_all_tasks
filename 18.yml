@@ -1,0 +1,15 @@
+---
+- name: Print output if age is greater than 18 using templates 
+  hosts: all
+  vars:
+    age: 15
+    uname: PRINCE NARULA
+    contact: 7688936973
+    address: Kota, Rajasthan
+    company: Celebal Technologies PVT. LTD.
+    company_add: Mansarovar
+  tasks:
+    - template:
+        src: age.j2
+        dest: /secureform.txt
+    

@@ -1,0 +1,7 @@
+---
+- name: copy file to managed nodes
+  hosts: all
+  tasks:
+    - copy:
+        src: new.txt
+        dest: /file.txt

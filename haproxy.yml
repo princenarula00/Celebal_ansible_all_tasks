@@ -1,0 +1,22 @@
+---
+- name: configure HAproxy server on local machine
+  hosts: localhost
+  tasks:
+    - name: Install HAproxy
+      yum:
+        name: haproxy
+        state: present
+    - name: start and enable HAproxy service
+      service:
+        name: haproxy
+        state: started
+        enabled: yes
+    - name: Configure HAproxy
+      template:
+        src: haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+    - name: restart HAproxy service
+      service:
+        name: haproxy
+        state: restarted
+

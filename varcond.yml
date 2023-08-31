@@ -1,0 +1,14 @@
+---
+- name: template module use with condition+varaiable
+  hosts: all
+  vars:
+    form: no
+    name: Prince
+    contect: 7688936973
+    sorry: You cann't access the form
+  tasks:
+    - name: using template module
+      template:
+        src: varcond.j2
+        dest: /myform.txt
+

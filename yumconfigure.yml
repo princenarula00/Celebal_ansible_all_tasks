@@ -1,0 +1,5 @@
+---
+- name: configure yum repo on managednodes using roles
+  hosts: all
+  roles:
+    - yumrepo 

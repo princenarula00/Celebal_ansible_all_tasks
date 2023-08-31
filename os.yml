@@ -1,0 +1,9 @@
+---
+- name: run tasks os specific only
+  hosts: all
+  tasks:
+    - name: create user
+      user:
+        name: princenarula
+        state: present
+      when: ansible_os_family == "RedHat"

@@ -1,0 +1,13 @@
+---
+- name: using templete with variable generate configuartion file
+  hosts: all
+  vars:
+    app_name: MyApplication
+    app_port: 8080
+    db_host: db.example.com
+    db_username: myuser
+  tasks:
+    - name: generate config file
+      template:
+        src: my_temp_conf.j2
+        dest: /app_config.conf 

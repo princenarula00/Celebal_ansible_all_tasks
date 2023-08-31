@@ -1,0 +1,9 @@
+---
+- name: add user by import_tasks
+  hosts: all
+  tasks:
+    - name: import other playbook tasks
+      debug:
+        msg: "import_tasks"
+    - import_tasks: user_creation.yml
+

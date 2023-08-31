@@ -1,0 +1,19 @@
+---
+- name: Dynamically take input from user during runtime and using it in playbook
+  hosts: all
+  vars_prompt:
+    - name: user_name
+      prompt: "Enter user's name "
+      private: no
+    - name: user_age
+      prompt: "Enter user's age "
+      private: no
+    - name: user_login_password
+      prompt: "Enter password for login"
+      private: yes
+
+  tasks:
+    - name: Displaying user input 
+      debug:
+        msg: "User's name is {{ user_name }} , age is {{ user_age }} , login password is {{ user_login_password }} "
+

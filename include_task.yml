@@ -1,0 +1,12 @@
+---
+- name: using include_tasks
+  hosts: all
+  tasks:
+    - name: msg
+      debug:
+        msg: "use include_tasks example"
+    - include_tasks: user_creation.yml
+      loop:
+        - controlnode
+        - managedhost1
+        - managedhost2

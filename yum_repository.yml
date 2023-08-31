@@ -1,0 +1,23 @@
+---
+- name: configure yum on managed nodes
+  hosts: all
+  tasks:
+    - name: configure yum
+      yum_repository:
+        name: AppStream
+        description: AppStream repo
+        baseurl: file:///mnt/AppStream
+        gpgcheck: no
+        enabled: yes
+        state: absent
+
+    - name: configure yum
+      yum_repository:
+        name: BaseOS
+        description: BaseOS repo
+        baseurl: file:///mnt/BaseOS
+        gpgcheck: no
+        enabled: yes
+        state: absent
+
+

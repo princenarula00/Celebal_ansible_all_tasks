@@ -1,0 +1,12 @@
+---
+- name: creating user and group
+  hosts: all
+  tasks:
+    - name: create user
+      user:
+        name: sunny
+        state: present
+    - name: create group
+      group:
+        name: prince
+        state: present

@@ -1,0 +1,5 @@
+---
+- name: install nodejs, npm applications
+  hosts: all
+  roles:
+    - applications

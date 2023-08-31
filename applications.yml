@@ -1,0 +1,11 @@
+---
+- name: install nodejs and npm application
+  hosts: all
+  tasks:
+    - name: install nodejs and npm
+      yum:
+        name:
+          - nodejs
+          - npm
+        state: present
+

@@ -1,0 +1,12 @@
+---
+- name: creating file and directory
+  hosts: all
+  tasks:
+    - name: create a file
+      file:
+        path: /file1
+        state: touch
+    - name: create a directory
+      file:
+        path: /directory1
+        state: directory

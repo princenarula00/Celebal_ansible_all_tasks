@@ -1,0 +1,19 @@
+---
+- name: Add users iteratively using loop
+  hosts: all
+  vars:
+    user_add:
+      - username: ram
+        password: redhat
+      - username: shyam
+        password: cloud
+      - username: sita
+        password: ansible
+      - username: gita
+        password: docker
+  tasks:
+    - name: Add users using loop
+      user:
+        name: "{{ item.username }}"
+        password: "{{ item.password | password_hash('sha512') }}"
+      loop: "{{ user_add }}"

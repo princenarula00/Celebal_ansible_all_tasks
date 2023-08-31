@@ -1,0 +1,11 @@
+---
+- name: template with condition use
+  hosts: all
+  vars:
+    enable_logging: false
+    log_file: /var/log
+    log1_file: /var/run
+  tasks:
+    - template:
+        src: my_conf.j2
+        dest: /config.conf

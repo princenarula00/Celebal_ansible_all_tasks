@@ -1,0 +1,10 @@
+{% if age > 18 %}
+Hey!!! congrates you are {{ age }} you can access the form
+Name = "{{ uname }}"
+Contact = "{{ contact }}"
+Address = "{{ address }}"
+Company = "{{ company }}"
+Company_Add = "{{ company_add }}"
+{% else %}
+sorry!!! you cann't access this form because your age is {{ age }} you are not 18+ 
+{% endif %}

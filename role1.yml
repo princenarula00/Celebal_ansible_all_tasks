@@ -1,0 +1,5 @@
+---
+- name: install role from ansible galaxy and use
+  hosts: all
+  roles:
+    - geerlingguy.apache

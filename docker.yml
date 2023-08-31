@@ -1,0 +1,36 @@
+---
+- name: Install docker on managed nodes and launch container
+  hosts: all
+  tasks:
+    - name: install yum-utils for yum-config-manager
+      yum:
+        name: yum-utils
+        state: present
+
+    - name: First add docker repo
+      shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: install docker
+      yum:
+        name: docker-ce
+        state: present
+
+    - name: start docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: pull the httpd docker image
+      docker_image:
+        name: httpd
+        state: present
+        source: pull
+
+    - name: run HTTPD container
+      docker_container:
+        name: httpd_container
+        image: httpd
+        ports:
+          - 8080:80
+        state: started

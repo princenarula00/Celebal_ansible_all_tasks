@@ -1,0 +1,9 @@
+---
+# tasks file for applications
+- name: install nodejs and npm application
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - npm
+    - nodejs

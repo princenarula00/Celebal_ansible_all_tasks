@@ -1,0 +1,9 @@
+---
+- name: use timesync role from RHEL system roles
+  hosts: node1
+  vars:
+    timesync_ntp_servers:
+      - hostname: 0.in.pool.ntp.org
+        iburst: true
+  roles:
+    - rhel-system-roles.timesync

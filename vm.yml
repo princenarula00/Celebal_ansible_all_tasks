@@ -1,0 +1,15 @@
+---
+- name: Creating Virtual machine on AWS
+  hosts: localhost
+  tasks:
+    - name: Create Virtual Machine
+      amazon.aws.ec2_instance:
+        name: ansible_VM
+        region: ap-south-1
+        image_id: ami-008b85aa3ff5c1b02
+        key_name: aws
+        vpc_subnet_id: subnet-0797b8bb42b9e865a
+        access_key: AKIA2VA54CDNSHUANCRU
+        secret_key: 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
+        instance_type: t2.micro
+  

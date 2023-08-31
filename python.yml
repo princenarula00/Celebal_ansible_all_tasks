@@ -1,0 +1,14 @@
+---
+- name: Install python Applications
+  hosts: all
+  tasks:
+    - name: Install pip package manager for python
+      yum:
+        name: python3-pip
+        state: present
+    - name: Install Flask and Requests from pip
+      pip:
+        name:
+          - Flask
+          - Requests
+

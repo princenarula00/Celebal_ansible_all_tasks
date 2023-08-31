@@ -1,0 +1,7 @@
+---
+- hosts: node1
+  gather_facts: false
+  vars:
+    selinux_state: enforcing
+  roles:
+    - role: rhel-system-roles.selinux

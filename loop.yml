@@ -1,0 +1,8 @@
+---
+- name: template use with loop also call magic variable
+  hosts: all
+  tasks:
+    - name: using template module and file ip,fqdn and hostname 
+      template:
+        src: loop.j2
+        dest: /configuration.txt

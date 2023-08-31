@@ -1,0 +1,24 @@
+---
+# tasks file for userfilesdirectory
+- name: create some user
+  user:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - one
+    - two
+- name: create files
+  file:
+    path: "{{ item }}"
+    state: touch
+  loop:
+    - /three
+    - /four
+- name: create directory
+  file:
+    name: "{{ item }}"
+    state: directory
+  loop:
+    - /five
+    - /six
+

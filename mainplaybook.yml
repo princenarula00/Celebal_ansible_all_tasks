@@ -1,0 +1,7 @@
+---
+- name: using all roles in main playbook
+  hosts: all
+  roles:
+    - apache
+    - applications
+    - userfilesdirectory 

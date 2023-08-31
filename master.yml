@@ -1,0 +1,9 @@
+--- 
+- name: import playbook1 for webserver
+  import_playbook: webserver.yml
+
+- name: import playbook2 for create user and group
+  import_playbook: usergroup.yml
+
+- name: import playbook3 for create file and directory
+  import_playbook: filedirectory.yml 

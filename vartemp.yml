@@ -1,0 +1,14 @@
+---
+- name: template module using variable
+  hosts: all
+  vars:
+    first_name: Prince
+    last_name:  Narula
+    address: kota,Rajasthan
+    mobile_no: 7688936973
+  tasks:
+    - name: using template module
+      template:
+        src: variable.j2
+        dest: /onlineform.txt
+    

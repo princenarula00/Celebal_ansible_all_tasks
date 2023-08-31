@@ -1,0 +1,5 @@
+---
+# vars file for apache
+web_pkg: httpd
+web_svc: httpd
+fir_port: 80/tcp

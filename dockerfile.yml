@@ -1,0 +1,25 @@
+---
+- name: build docker image via docker file and launch container and apply patting rule
+  hosts: all
+  tasks:
+    - name: copy dockerfile
+      copy:
+        src: Dockerfile
+        dest: /tmp/Dockerfile
+    - name: build image
+      docker_image:
+        build:
+          path: /tmp
+        name: ubuntu_webserver
+        source: build
+        tag: latest
+    - name: run container using above create image
+      docker_container:
+        name: webcontainer
+        image: ubuntu_webserver
+        ports:
+          - 8080:80
+        state: started
+
+
+

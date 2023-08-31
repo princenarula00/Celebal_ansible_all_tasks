@@ -1,0 +1,12 @@
+---
+- name: raw module practice
+  hosts: all
+  tasks:
+    - name: show hostname
+      raw: hostname
+      register: hostname_output
+
+    - name: show output
+      debug:
+        var: hostname_output.stdout_lines
+
